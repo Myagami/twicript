@@ -5,9 +5,10 @@
 require File.dirname(__FILE__) + "/Twicript_Engine"
 
 #インスタンス生成 / 起動画面出力
-engine = Twicript_Engine.new
-engine.start()
+#engine = Twicript_Engine.new
 
 #スクリプト読み込み
-
+tw_src = ARGV[0]
+print "\n"
+puts tw_src
 
