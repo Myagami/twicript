@@ -20,11 +20,10 @@ class Twicript_Engine
     begin #処理
       src = File.readlines(file) 
       #ヘッダ判定
-      if /^#twicript$/ =~ src[0] then
-        puts "true"
-      else
+      if !/^#twicript$/ =~ src[0] then
         raise "Error Header Code"
       end
+
       for i in 1 .. src.size
         puts src[i]
       end
