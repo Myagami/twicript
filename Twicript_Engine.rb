@@ -34,11 +34,23 @@ class Twicript_Engine
   end
 
   def syntax_check(line) # 構文チェック
-    if /[A-Z]{1,}_[a-z]{1};/ =~ line # 出力系処理
-      puts line 
+    if /([A-Z]{1,})_([a-z]{1});/ =~ line # 出力系処理
+      send("func_#{$1}",$2);
+      
     elsif /[A-Z]{1,}_[a-z]{1},[a-z]{1}=[a-z]{1,};/ =~ line # 演算系処理
       puts "Math:"+line 
+    elsif /HE;/ =~ line # 演算系処理
+      puts "Hello,World!!"
+    else 
+      puts line
     end
-    
   end
+
+#処理
+
+  def func_PR(v)
+    puts "PR:"+v 
+  end
+
+
 end
