@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/Twicript_Core"
 
 class Twicript_Engine
   include Twicript_Core # => 関数系
-  @@twi_vr = Hash.new([])
+
   def initialize()
     i=0
     while i < 30
@@ -41,10 +41,10 @@ class Twicript_Engine
     if /([A-Z]{1,})_([a-z]{1});/ =~ line # 出力系処理
       send("func_#{$1}",$2);
       
-    elsif /[A-Z]{1,}_[a-z]{1},[a-z]{1}=[a-z]{1,};/ =~ line # 演算系処理
+    elsif /([A-Z]{1,}_[a-z]{1},[a-z]{1}|[A-Z]{1,}_[a-z]{1})=([a-z0-9]{1,});/ =~ line # 演算系処理
       puts "Math:"+line 
     elsif /HE;/ =~ line # 演算系処理
-      puts "Hello,World!!"
+      func_HE() 
     else 
       puts line
     end
