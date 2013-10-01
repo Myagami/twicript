@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+require File.dirname(__FILE__) + "/Twicript_Core"
+
 class Twicript_Engine
+  include Twicript_Core # => 関数系
+  @@twi_vr = Hash.new([])
   def initialize()
     i=0
     while i < 30
@@ -45,12 +49,5 @@ class Twicript_Engine
       puts line
     end
   end
-
-#処理
-
-  def func_PR(v)
-    puts "PR:"+v 
-  end
-
 
 end
