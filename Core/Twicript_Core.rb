@@ -7,7 +7,11 @@ module Twicript_Core
   end
 
   def func_VR(k,v)
-    @@twi_vr[k] = v.to_i
+    if /[0-9]{1,}/ =~ v
+      @@twi_vr[k] = v.to_i
+    else
+      @@twi_vr[k] = v
+    end
   end
 
   def func_HE() # => Hello,World!!
