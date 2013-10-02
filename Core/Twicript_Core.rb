@@ -56,7 +56,7 @@ module Twicript_Core
 
   # 装飾
   def func_LI()
-      puts "-"*5
+      puts "-"*10
   end
 
 end
