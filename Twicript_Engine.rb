@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-require File.dirname(__FILE__) + "/Twicript_Core"
+require File.dirname(__FILE__) + "/Core/Twicript_Core"
 
 class Twicript_Engine
   include Twicript_Core # => 関数系
-
+  
   def initialize()
     i=0
     while i < 30
@@ -17,7 +17,7 @@ class Twicript_Engine
       print "-"
       i += 1
     end
-    print "\n\n"
+    puts "\n"
   end
 
   def loading_code(file)
@@ -40,11 +40,14 @@ class Twicript_Engine
   def syntax_check(line) # 構文チェック
     if /([A-Z]{1,})_([a-z]{1});/ =~ line # 出力系処理
       send("func_#{$1}",$2);
-      
-    elsif /([A-Z]{1,}_[a-z]{1},[a-z]{1}|[A-Z]{1,}_[a-z]{1})=([a-z0-9]{1,});/ =~ line # 演算系処理
-      puts "Math:"+line 
-    elsif /HE;/ =~ line # 演算系処理
-      func_HE() 
+    elsif /([A-Z]{1,})_([a-z0-9]{1,}|[a-z0-9]{1,},[a-z0-9]{1,})=([a-z0-9]{1,});/ =~ line # 演算系処理
+      #p line.scan(/([A-Z]{1,})_([a-z0-9]{1,}|[a-z0-9]{1,},[a-z0-9]{1,})=([a-z0-9]{1,});/)
+      #puts "func_#{$1}"
+      send("func_#{$1}",$2,$3);
+      #puts "Math:"+line 
+
+    elsif /([A-Z]{1,});/ =~ line # 演算系処理
+      send("func_#{$1}");
     else 
       puts line
     end
