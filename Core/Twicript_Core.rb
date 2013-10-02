@@ -1,20 +1,62 @@
+# -*- coding: utf-8 -*-
 module Twicript_Core
   @@twi_vr = Hash.new([])
   @@twi_vr.default = nil
-  @@twi_vr["x"] = 72
-  @@twi_vr["y"] = 40
-  @@twi_vr["z"] = 132
-
   def func_PR(v) # => Printl
     puts @@twi_vr[v] 
-    #puts "PR:"+v 
   end
 
   def func_VR(k,v)
-    @@twi_vr[k] = v
+    @@twi_vr[k] = v.to_i
   end
 
   def func_HE() # => Hello,World!!
      puts "Hello,World!!"
   end
+
+  #演算
+
+  def func_PP(vk,vv) # 加算
+    vkr = vk.split(",")
+    v = 0
+    (0..vkr.length-1).each{|i|
+      v += @@twi_vr[vkr[i]]
+    }
+    @@twi_vr[vv] = v
+  end
+
+  def func_DD(vk,vv) # 減算
+    vkr = vk.split(",")
+    v = @@twi_vr[vkr[0]]
+    
+    (1..vkr.length-1).each{|i|
+      v -= @@twi_vr[vkr[i]]
+    }
+    @@twi_vr[vv] = v
+  end
+
+  def func_ME(vk,vv) # 除算
+    vkr = vk.split(",")
+
+    (0..vkr.length-1).each{|i|
+      t = @@twi_vr[vkr[i]]
+      #v = @@twi_vr[vkr[i]]
+    }
+    @@twi_vr[vv] = v
+  end
+
+  def func_SP(vk,vv) # 乗算
+    vkr = vk.split(",")
+
+    (1..vkr.length-1).each{|i|
+      v = @@twi_vr[vkr[i]]
+    }
+    @@twi_vr[vv] = v
+  end
+
+  # 装飾
+  def func_LI()
+      puts "-"*5
+  end
+
 end
