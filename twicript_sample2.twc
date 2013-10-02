@@ -1,0 +1,17 @@
+#twicript  
+VR_x=80;  
+PR_x;  
+LI;
+VR_y=90;  
+PR_y;  
+LI;
+PP_x,y=z;  
+PR_z;
+LI;
+DD_z,y=a;  
+PR_a;
+LI;
+HE;
+VR_k=text;
+PR_k;
+LI;
