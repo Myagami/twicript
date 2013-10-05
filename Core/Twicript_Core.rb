@@ -58,13 +58,10 @@ module Twicript_Core
   end
 
   def func_XX(vk,vv) # 累乗(変数,数)
+    puts vk
     vkr = vk.split(",")
-    v = @@twi_vr[vkr[i]]
-    (1..vkr.length-1).each{|i|
-      v = v * v
-    }
-    @@twi_vr[vv] = v
-  end
+    
+  end    
   # 装飾
   def func_LI()
       puts "-"*10
