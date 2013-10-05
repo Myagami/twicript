@@ -57,10 +57,18 @@ module Twicript_Core
     @@twi_vr[vv] = v
   end
 
-  def func_XX(vk,vv) # 累乗(変数,数)
-    puts vk
+  def func_PW(vk,vv) # 累乗(変数,数)
     vkr = vk.split(",")
-    puts vkr
+    i = 0
+    vb = @@twi_vr[vkr[0]].to_i
+    v = vb
+    vmax =  vkr[1].to_i 
+    vmax -= 1
+    while i < vmax do
+      v = vb * v
+      i += 1
+    end
+    @@twi_vr[vv] = v
   end    
   # 装飾
   def func_LI()
