@@ -14,3 +14,7 @@ LI;
 HE;
 VR_k="text";
 PR_k;
+VR_n=4;
+PW_n,5=m;
+LI;
+PR_m;
