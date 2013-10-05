@@ -40,15 +40,14 @@ class Twicript_Engine
   def syntax_check(line) # 構文チェック
     if /([A-Z]{1,})_([a-z]{1});/ =~ line # 出力系処理
       send("func_#{$1}",$2);
-    elsif /([A-Z]{1,})_([a-z0-9]{1,}|[a-z0-9]{1,},[a-z0-9]{1,})=([a-z0-9']{1,});/ =~ line # 演算系処理
+    elsif /([A-Z]{1,})_([a-z0-9]{1,}|[a-z0-9]{1,},[a-z0-9]{1,})=([a-z0-9'"]{1,});/ =~ line # 演算系処理
       #p line.scan(/([A-Z]{1,})_([a-z0-9]{1,}|[a-z0-9]{1,},[a-z0-9]{1,})=([a-z0-9]{1,});/)
       #puts "func_#{$1}"
       send("func_#{$1}",$2,$3);
       #puts "Math:"+line 
 
-    elsif /([A-Z]{1,});/ =~ line # 演算系処理
+    elsif /([A-Z]{1,});/ =~ line # その他
       send("func_#{$1}");
-    else 
     end
   end
 
