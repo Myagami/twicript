@@ -12,6 +12,5 @@ DD_z,y=a;
 PR_a;
 LI;
 HE;
-VR_k='text';
+VR_k="text";
 PR_k;
-LI;
