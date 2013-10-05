@@ -10,7 +10,7 @@ module Twicript_Core
     if /[0-9]{1,}/ =~ v
       @@twi_vr[k] = v.to_i
     else
-      @@twi_vr[k] = v
+      @@twi_vr[k] = v.gsub(/((^\'|^\")|(\'$|\"$))/,"") 
     end
   end
 
@@ -19,7 +19,6 @@ module Twicript_Core
   end
 
   #演算
-
   def func_PP(vk,vv) # 加算
     vkr = vk.split(",")
     v = 0
@@ -58,6 +57,9 @@ module Twicript_Core
     @@twi_vr[vv] = v
   end
 
+  def func_XX(vk,vv) # 累乗
+    
+  end
   # 装飾
   def func_LI()
       puts "-"*10
