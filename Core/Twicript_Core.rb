@@ -60,7 +60,7 @@ module Twicript_Core
   def func_XX(vk,vv) # 累乗(変数,数)
     puts vk
     vkr = vk.split(",")
-    
+    puts vkr
   end    
   # 装飾
   def func_LI()
