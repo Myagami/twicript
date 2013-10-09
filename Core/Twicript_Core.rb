@@ -6,7 +6,7 @@ module Twicript_Core
     puts @@twi_vr[v] 
   end
 
-  def func_VR(k,v)
+  def func_VR(k,v) # 変数セット
     if /[0-9]{1,}/ =~ v
       @@twi_vr[k] = v.to_i
     else
