@@ -20,7 +20,7 @@ class Twicript_Engine
     puts "\n"
   end
 
-  def loading_code(file)
+  def loading_code(file) # ファイルを読む
     begin #処理
       src = File.readlines(file) 
       #ヘッダ判定
@@ -49,6 +49,10 @@ class Twicript_Engine
     elsif /([A-Z]{1,});/ =~ line # その他
       send("func_#{$1}");
     end
+  end
+
+  def type_check(data) # データタイプをチェックする
+    return data.class
   end
 
 end
