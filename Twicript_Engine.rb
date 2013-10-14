@@ -4,21 +4,23 @@ require File.dirname(__FILE__) + "/Core/Twicript_Core"
 class Twicript_Engine
   include Twicript_Core # => 関数系
   
-  def initialize()
-    i=0
-    while i < 30
-      print "-"
-      i += 1
-    end
-    print "\n"
-    print "Twicript for Command Line\n"
-    i=0
-    while i < 30
-      print "-"
-      i += 1
-    end
-    puts "\n"
-  end
+=begin
+     def initialize()
+       i=0
+       while i < 30
+         print "-"
+         i += 1
+       end
+       print "\n"
+       print "Twicript for Command Line\n"
+       i=0
+       while i < 30
+         print "-"
+         i += 1
+       end
+       puts "\n"
+     end
+=end
 
   def loading_code(file) # ファイルを読む
     begin #処理
