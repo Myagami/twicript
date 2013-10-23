@@ -14,6 +14,11 @@ module Twicript_Core
     end
   end
 
+  #データ取得
+  def func_VRG(){
+      
+    }
+
   def func_HE() # => Hello,World!!
      puts "Hello,World!!"
   end
@@ -69,7 +74,9 @@ module Twicript_Core
       i += 1
     end
     @@twi_vr[vv] = v
-  end    
+  end
+
+
   # 装飾
   def func_LI()
       puts "-"*10
