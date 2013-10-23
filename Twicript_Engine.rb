@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 require File.dirname(__FILE__) + "/Core/Twicript_Core"
+require File.dirname(__FILE__) + "/Core/Twicript_Math"
+
 
 class Twicript_Engine
   include Twicript_Core # => 関数系
